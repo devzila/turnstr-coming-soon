@@ -108,10 +108,18 @@ img {
   .right {
     width: 100%;
   }
+  .form {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 @media only screen and (max-width:500px) {
   /* For mobile phones: */
   .main, .right {
+    width: 100%;
+  }
+  .form {
+    margin-left: 0%;
     width: 100%;
   }
 }
@@ -155,6 +163,7 @@ h2 {
 label {
   display: block; 
   margin-bottom: 5px; 
+  margin-top: 40px;
   /*color: #03c7ff; */
 }
 
@@ -179,4 +188,13 @@ button {
   width: calc(100% - 20px); 
   box-sizing: border-box; 
   margin-top: 10px; 
+}
+
+.form {
+  text-align: left; 
+  background: rgba(255, 255, 255); 
+  /*width: 80%;*/
+  color: grey;
+  margin-top: 220px;
+ /* margin-left: 15%;*/
 }

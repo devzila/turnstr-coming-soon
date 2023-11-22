@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="image/x-icon" href="turnstr.ico">
+    <link rel="stylesheet" href="style.css"> 
+  </head>
+  <body>
+
+      <div class="main">
+        <div class="cube"> 
+          <!-- Creating 6 divs for each face of the cube -->
+          <div class="box box1"> 
+            <img src="taylor1.png" alt="image 1"> 
+          </div> 
+    
+          <div class="box box2"> 
+            <img src="taylor2.png" alt="image 2"> 
+          </div> 
+    
+          <div class="box box3"> 
+              <img src="taylor3.png" alt="image 3"> 
+          </div> 
+    
+          <div class="box box4"> 
+            <img src="taylor4.png" alt="image 4"> 
+          </div> 
+    
+          <div class="box box5"> 
+            <img src= "taylor5.png" alt="image 5"> 
+          </div> 
+    
+          <div class="box box6"> 
+            <img src= "taylor6.png" alt="image 6"> 
+          </div> 
+        </div> 
+        <div style="margin-top: 80px;">
+          <img src="logo_white.png"  style="width: 240px !important; height: 66px !important;"/>
+          <h2 style="color: white;">Comming Soon...</h2>
+        </div>
+      </div>
+
+      <div class="container right">
+        <div style="text-align: left; 
+          background: rgba(255, 255, 255); 
+          width: 90%;
+          color: grey;
+          margin-top: 60px;
+        ">
+          <form id="signinForm" action="#" method="post">
+              <h2 style="color: grey;">Join Us</h2>
+              <div class="form-group">
+                  <label for="username">Name:</label>
+                  <input type="text" id="username" name="username" required>
+              </div>
+  
+              <div class="form-group">
+                  <label for="password">Email:</label>
+                  <input type="email" id="email" name="email" required>
+              </div>
+
+              <p style="text-align: center;">Turnstr is an online mobile photos and videos sharing app. 
+                <br/>It enables user to take pictures and videos, and post them either 
+                publicly or privately on the app and also on variety of other 
+                social networking platforms, such as Facebook, Twitter, Tumblr, and Flickr. 
+                This is an app with a difference where user can swipe to rotate (3d view) to see 4 images. 
+              </p>
+  
+              <button type="button" onclick="submitForm()">Join</button>
+              <br />
+          </form>
+        </div>
+      </div>
+
+      <script>
+        function submitForm() {
+            var formData = {
+                username: $('#username').val(),
+                password: $('#email').val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: 'https://dummyjson.com/posts/add',
+                data: JSON.stringify(formData),
+                contentType: 'application/json',
+                success: function(response) {
+                    
+                    console.log('Data sent successfully:', response);
+                },
+                error: function(xhr, status, error) {
+                   
+                    console.error('Error sending data:', error);
+                    console.log('Status:', status);
+                }
+            });
+        }
+    </script>
+
+  </body>
+</html>
+

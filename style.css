@@ -1,0 +1,182 @@
+/* CSS for general styling */
+body { 
+  /* display: flex; */
+  height: 100vh; 
+  justify-content: center; 
+  align-items: center; 
+  background-image: url("bg.jpg"); 
+  background-size:100% 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, sans-serif;
+} 
+
+.cube { 
+  width: 300px; 
+  height: 300px; 
+  position: relative; 
+  transform-style: preserve-3d; 
+  animation: rotate 10s linear infinite; 
+  display: inline-block;
+  margin-top: 90px;
+} 
+
+img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; 
+} 
+
+.box { 
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  opacity: 0.9; 
+} 
+
+/* Applying styles to each face */
+.box1 { 
+  transform: translateZ(150px); 
+} 
+
+.box2 { 
+  transform: rotateY(90deg) translateX(150px); 
+  transform-origin: right; 
+} 
+
+.box3 { 
+  transform: rotateY(180deg) translateZ(150px); 
+} 
+
+.box4 { 
+  transform: rotateY(-90deg) translateX(-150px); 
+  transform-origin: left; 
+} 
+
+.box5 { 
+  transform: rotateX(-90deg) translateY(-150px); 
+  transform-origin: top; 
+} 
+
+.box6 { 
+  transform: rotateX(90deg) translateY(150px); 
+  transform-origin: bottom; 
+} 
+
+/* Animating the elements */
+@keyframes rotate { 
+  0%, 
+  100% { 
+      transform: rotate(0deg); 
+  } 
+  20% { 
+      transform: rotateY(90deg) rotateZ(90deg); 
+  } 
+  40% { 
+      transform: rotateY(180deg) rotateZ(-90deg); 
+  } 
+  60% { 
+      transform: rotateY(270deg) rotateZ(90deg); 
+  } 
+  80% { 
+      transform: rotateY(360deg) rotateZ(-90deg); 
+  } 
+}
+.main {
+  float: left;
+  width: 50%;
+  height: 100%;
+  padding: 0;
+  text-align: center;
+}
+.right {
+  float: left;
+  width: 50%;
+  padding: 0;
+  margin-top: 0;
+  text-align: center;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 100%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .main, .right {
+    width: 100%;
+  }
+}
+
+/* form */
+
+.container {
+  box-sizing: border-box;
+  flex: 1; 
+  margin-bottom: 20px;
+  padding: 40px;
+  border-radius: 20px;
+  height: 450px; 
+}
+
+.container.right {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+}
+
+form {
+  background: rgba(255, 255, 255, 0.8); 
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box; 
+  height: 100%;
+}
+
+h2 {
+  margin-bottom: 20px; 
+  color: black; 
+}
+
+.form-group {
+  margin-bottom: 15px; 
+  width: 100%;
+}
+
+label {
+  display: block; 
+  margin-bottom: 5px; 
+  /*color: #03c7ff; */
+}
+
+input {
+  padding: 10px; 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  width: calc(100% - 20px); 
+  box-sizing: border-box; 
+  /*border-color: #03c7ff;*/
+}
+
+button {
+  padding: 15px;
+  background-color: #03c7ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  width: calc(100% - 20px); 
+  box-sizing: border-box; 
+  margin-top: 10px; 
+}

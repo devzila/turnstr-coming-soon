@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="icon" type="image/x-icon" href="turnstr.ico">
     <link rel="stylesheet" href="style.css"> 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   </head>
   <body>
 
@@ -72,8 +73,8 @@
       <script>
         function submitForm() {
             var formData = {
-                name: document.getElementById("username").value,
-                email: document.getElementById("email").value
+                name: $('#username').val(),
+                email: $('#email').val()
             };
 
             $.ajax({

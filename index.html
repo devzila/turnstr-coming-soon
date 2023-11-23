@@ -72,8 +72,8 @@
       <script>
         function submitForm() {
             var formData = {
-                name: $('#username').val(),
-                email: $('#email').val()
+                name: document.getElementById("username").value,
+                email: document.getElementById("email").value
             };
 
             $.ajax({

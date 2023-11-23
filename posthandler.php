@@ -5,7 +5,7 @@ $password = "H85mYyEBh22CBc6F";
 $dbname = "sql_turnstr_devz";
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
+//if ($_SERVER["REQUEST_METHOD"] == "POST"){
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbname);
   // Check connection
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
   $conn->close();
-}
+//}
 
 
 ?>

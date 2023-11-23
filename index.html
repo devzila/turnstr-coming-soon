@@ -47,7 +47,7 @@
         <div class="form">
           <form id="signinForm" action="#" method="post">
               <h2 style="color: grey;">Join Us</h2>
-              <p id="notice" style="color: green; visibility: hidden"><strong>You have reached us!</strong></p>
+              <p id="notice" style="color: green; display: none;"><strong>You have reached us!</strong></p>
               <div class="form-group">
                   <label for="username">Name:</label>
                   <input type="text" id="username" name="username" required>
@@ -73,25 +73,27 @@
 
       <script>
         function submitForm() {
-            var formData = {
-                name: $('#username').val(),
-                email: $('#email').val()
-            };
+          var formData = {
+              name: $('#username').val(),
+              email: $('#email').val()
+          };
 
-            $.ajax({
-                type: 'POST',
-                url: '/posthandler.php',
-                data: JSON.stringify(formData),
-                contentType: 'application/json',
-                success: function(response) {
-                  console.log('Data sent successfully:', response);
-                  $('#notice').show();
-                },
-                error: function(xhr, status, error) {
-                  console.error('Error sending data:', error);
-                  console.log('Status:', status);
-                }
-            });
+          $.ajax({
+              type: 'POST',
+              url: '/posthandler.php',
+              data: JSON.stringify(formData),
+              contentType: 'application/json',
+              success: function(response) {
+                console.log('Data sent successfully:', response);
+                $('#notice').show();
+                $('#username').val("");
+                $('#email').val("");
+              },
+              error: function(xhr, status, error) {
+                console.error('Error sending data:', error);
+                console.log('Status:', status);
+              }
+          });
         }
       </script>
 
